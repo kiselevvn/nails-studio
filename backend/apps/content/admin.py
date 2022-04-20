@@ -181,7 +181,7 @@ class СertificateAdmin(admin.ModelAdmin):
     """
 
     list_display = (
-        "picture",
+        "__str__",
         "is_published",
         "order",
     )
@@ -196,7 +196,7 @@ class GalleryAdmin(admin.ModelAdmin):
     """
 
     list_display = (
-        "picture",
+        "__str__",
         "is_published",
         "order",
     )
