@@ -15,55 +15,54 @@ from .models import (
     Сertificate,
 )
 
+# @admin.register(News)
+# class NewsAdmin(admin.ModelAdmin):
+#     """
+#     Админ панель
+#     Новость в админке
+#     """
 
-@admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
-    """
-    Админ панель
-    Новость в админке
-    """
-
-    list_display = (
-        "title",
-        "category_news",
-        "date",
-        "is_published",
-        "is_published_landing",
-    )
-    list_filter = (
-        "is_published",
-        "is_published_landing",
-    )
-
-
-@admin.register(CategoryNews)
-class CategoryNewsAdmin(admin.ModelAdmin):
-    """
-    Админ панель
-    Новость в админке
-    """
-
-    list_display = (
-        "name",
-        "date_created",
-        "is_published",
-    )
-    list_filter = ("is_published",)
+#     list_display = (
+#         "title",
+#         "category_news",
+#         "date",
+#         "is_published",
+#         "is_published_landing",
+#     )
+#     list_filter = (
+#         "is_published",
+#         "is_published_landing",
+#     )
 
 
-@admin.register(QuestionAnswer)
-class QuestionAnswerAdmin(admin.ModelAdmin):
-    """
-    Админ панель
-    Вопрос ответ в админке
-    """
+# @admin.register(CategoryNews)
+# class CategoryNewsAdmin(admin.ModelAdmin):
+#     """
+#     Админ панель
+#     Новость в админке
+#     """
 
-    list_display = (
-        "question",
-        "date_updated",
-        "date_created",
-    )
-    list_filter = ("date_created",)
+#     list_display = (
+#         "name",
+#         "date_created",
+#         "is_published",
+#     )
+#     list_filter = ("is_published",)
+
+
+# @admin.register(QuestionAnswer)
+# class QuestionAnswerAdmin(admin.ModelAdmin):
+#     """
+#     Админ панель
+#     Вопрос ответ в админке
+#     """
+
+#     list_display = (
+#         "question",
+#         "date_updated",
+#         "date_created",
+#     )
+#     list_filter = ("date_created",)
 
 
 @admin.register(Comment)
