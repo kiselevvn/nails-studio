@@ -27,3 +27,6 @@ class Gallery(models.Model):
         verbose_name = _("Галлерея")
         verbose_name_plural = _("Фото галлереи")
         ordering = ["order"]
+
+    def __str__(self):
+        return f"Фото галлереи"

@@ -20,3 +20,6 @@ class Сertificate(models.Model):
         verbose_name = _("Сертфикат")
         verbose_name_plural = _("Сертфикаты")
         ordering = ["order"]
+
+    def __str__(self):
+        return f"Сертфикат"
