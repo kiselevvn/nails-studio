@@ -34,9 +34,9 @@ class Comment(
     email = models.EmailField(
         _("Электронная почта"), max_length=254, blank=True, null=True
     )
-    is_published_landing = models.BooleanField(
-        verbose_name=_("Отзыв опубликован"), default=False
-    )
+    # is_published_landing = models.BooleanField(
+    #     verbose_name=_("Отзыв опубликован"), default=False
+    # )
     date_created = models.DateTimeField(
         verbose_name=_("Дата создания"), auto_now_add=True
     )

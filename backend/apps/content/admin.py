@@ -76,10 +76,10 @@ class CommentAdmin(admin.ModelAdmin):
         "name",
         "category",
         "date_created",
-        "is_published_landing",
+        # "is_published_landing",
     )
     list_filter = (
-        "is_published_landing",
+        # "is_published_landing",
         "category",
     )
 
