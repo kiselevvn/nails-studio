@@ -6,9 +6,23 @@ class Comment(
     models.Model,
 ):
     """
-    Модель Отзыва
+    Модель Сообщение
     """
 
+    MESSAGE = 0
+    COYRSE_BUY = 1
+    CATEGORIES = [(MESSAGE, "Сообщение"), (COYRSE_BUY, "Курсы")]
+
+    category = models.IntegerField(
+        _("Категория сообщения"), default=0, choices=CATEGORIES
+    )
+    course = models.ForeignKey(
+        "content.Course",
+        verbose_name=_("Курс"),
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+    )
     name = models.CharField(
         verbose_name=_("Имя"),
         max_length=255,
@@ -28,8 +42,8 @@ class Comment(
     )
 
     class Meta:
-        verbose_name = _("Отзыв")
-        verbose_name_plural = _("Отзывы")
+        verbose_name = _("Сообщение")
+        verbose_name_plural = _("Сообщения")
         ordering = ["-date_created"]
 
     def __str__(self):

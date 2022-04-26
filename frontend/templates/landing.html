@@ -26,9 +26,10 @@ get_setting 'SUBTITLE' default=''
         <div class="carousel-item active">
             <div class="container-fluid">
               <div class="carousel-caption relative">
-                  <div class="row d_flex">
-                    <div class="col-md-6" style="">
-                        <img  class="bann_img" src="{% static 'images/banner_ing.jpg' %}" alt="#"/>
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col-md-4" style="background-image:url('{% static 'images/banner_ing.jpg' %}');background-size:cover;min-height:560px;">
+
+                        {% comment %} <img  class="bann_img" src="" alt="#"/> {% endcomment %}
                     </div>
                     <div class="col-md-6">
                         <h1>{% get_setting 'TITLE' default='' %}</h1>
@@ -44,9 +45,10 @@ get_setting 'SUBTITLE' default=''
         <div class="carousel-item">
           <div class="container-fluid">
             <div class="carousel-caption relative">
-                <div class="row d_flex">
-                  <div class="col-md-6">
-                      <img class="bann_img" src="{{ slide.picture.url }}" alt="#"/>
+                <div class="row justify-content-center align-items-center">
+                  <div class="col-md-4" style="background-image:url('{{ slide.picture.url }}');background-size:cover;min-height:560px;">
+
+                      {% comment %} <img  class="bann_img" src="" alt="#"/> {% endcomment %}
                   </div>
                   <div class="col-md-6">
                       <h1>{{ slide.title }}</h1>
@@ -72,23 +74,26 @@ get_setting 'SUBTITLE' default=''
 </section>
 <!-- end banner -->
 <!-- what we do  -->
-<div id="about" class="we_do slin">
-  <div class="container">
+<div id="about" class="we_do">
+  <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
             <div class="titlepage">
-              <h2>Галлерея</h2>
+              <h2>Фото галерея</h2>
             </div>
         </div>
       </div>
       <div class="row my-4 justify-content-center">
-        <div class="col-12 col-lg-10" >
+        <div class="col-12 col-md-10" >
+          <h2 class="my-2 text-center"></h2>
           <div
-            class="fotorama mx-auto"
-            data-width="100%"
+            class="fotorama h-100"
+            data-width=""
+            data-height="100%"
             data-maxHeight="600px"
             data-allowfullscreen="true"
             data-nav="thumbs"
+            data-fit="cover"
             >
             {% for photo in gallery_photo %}
               <img  src="{{photo.picture.url}}" alt="{{photo.description}}">
@@ -96,30 +101,32 @@ get_setting 'SUBTITLE' default=''
           </div>
         </div>
       </div>
-
   </div>
 </div>
 <!-- end what we do  -->
 <!-- about -->
-<div id="we-do" class="about slin2">
+<div id="we-do" class="about">
   <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-4">
-            <div class="titlepage text-center">
+            <div class="titlepage">
               <h2>Сертификаты</h2>
             </div>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-10" >
+        <div class="col-12 col-md-10" >
+
           <div
-            class="fotorama mx-auto"
-            data-width="100%"
+            class="fotorama h-100"
+            data-width=""
+            data-height="100%"
             data-maxHeight="600px"
             data-allowfullscreen="true"
             data-nav="thumbs"
+            data-fit="cover"
             >
-            {% for certificate in certificates %}
+            {% for  certificate in certificates %}
               <img  src="{{certificate.picture.url}}" alt="{{certificate.description}}">
             {% endfor %}
           </div>
@@ -129,7 +136,7 @@ get_setting 'SUBTITLE' default=''
 </div>
 <!-- end about -->
 <!-- our pricing -->
-<div id="pricing"  class="pricing slin">
+<div id="pricing"  class="pricing ">
   <div class="container my-4">
     <div class="row">
       <div class="col-md-12">
@@ -139,35 +146,32 @@ get_setting 'SUBTITLE' default=''
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-lg-10 offset-lg-1 col-md-12">
-          <div class="row justify-content-center">
-            {% for category in category_service %}
-            <div class="col-md-5 col-sm-6">
-              <div class="we_box">
-                <h3 class="my-2">{{category.name}}</h3>
-                {% for service in category.services.all %}
-                <p>{{service.name}} <strong>{{service.price}}</strong> руб.</p>
-                {% endfor %}
-
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-      </div>
-    </div>
-
     <div class="row justify-content-center" style="margin-bottom:80px;">
-      <div class="col-12 col-md-6">
-
+      {% for category in category_service %}
+      <div class="col-12 col-md-4">
         <div class="we_box">
-          <h3 class="my-2">Дополнительные Услуги</h3>
-          {% for service in additional_services %}
-          <p>{{service.name}} <strong>{{service.price}}</strong> руб.</p>
+          <h3 class="mb-3">{{category.name}}</h3>
+          {% for service in category.services.all %}
+          <div class="price-position mt-3 d-flex">
+            <div>{{service.name}}</div>
+            <div class="price-position__dots"></div>
+            <div><strong>{{service.price}} руб.</strong></div>
+          </div>
           {% endfor %}
-
         </div>
-
+      </div>
+      {% endfor %}
+      <div class="col-12 col-md-4">
+        <div class="we_box">
+          <h3 class="mb-3">Дополнительные Услуги</h3>
+          {% for service in additional_services %}
+          <div class="price-position mt-3 d-flex">
+            <div>{{service.name}}</div>
+            <div class="price-position__dots"></div>
+            <div><strong>{{service.price}} руб.</strong></div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
@@ -181,7 +185,7 @@ get_setting 'SUBTITLE' default=''
       </div>
       <div class="row justify-content-around">
         {% for course in courses %}
-        <div class="col-md-4">
+        <div class="col-md-4 mb-4">
             <div class="pricing_box">
               <div class="pricing_box_ti">
                   <h3>{{course.price}}<strong>/ руб.</strong></h3>
@@ -191,7 +195,7 @@ get_setting 'SUBTITLE' default=''
                   <p>{{course.description}}</p>
               </div>
             </div>
-            <a class="read_more mar_top" href="Javascript:void(0)">Записаться</a>
+            <a class="read_more mar_top" href="{% url 'course-buy' course.pk %}">Записаться</a>
         </div>
         {% endfor %}
 
@@ -200,7 +204,7 @@ get_setting 'SUBTITLE' default=''
 </div>
 <!-- end our pricing -->
 <!-- experts -->
-<div id="contact" class="experts slin2">
+<div id="contact" class="experts">
   <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -241,13 +245,13 @@ get_setting 'SUBTITLE' default=''
   <div class="container">
       <div class="row">
         <div class="col-md-12">
-            <div class="titlepage">
+            <div class="titlepage mb-4">
               <h2>Как с нами связвться?</h2>
             </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
+      <div class="row mb-4">
+        <div class="col-12 col-md-6">
             <form id="request" class="main_form" method="POST" action="{% url 'message' %}">
               {% csrf_token %}
               <div class="row">
@@ -270,16 +274,8 @@ get_setting 'SUBTITLE' default=''
               </div>
             </form>
         </div>
-      </div>
-  </div>
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-            <div class="map_main">
-              <div class="map-responsive">
-                  {% comment %} <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="386" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe> {% endcomment %}
-              </div>
-            </div>
+        <div class="col-12 col-md-6">
+          <iframe width="100%" height="80%" frameborder="0" style="min-height: 400px;" title="map" marginheight="0" marginwidth="0" scrolling="no" src="{% get_setting 'MAP' default='' %}" ></iframe>
         </div>
       </div>
   </div>

@@ -11,3 +11,8 @@ class MessageFormView(FormView):
     template_name = "message.html"
     form_class = MessageForm
     success_url = "/content/thanks/"
+
+    def form_valid(self, form):
+        # print(self.request)
+        form.save()
+        return super().form_valid(form)

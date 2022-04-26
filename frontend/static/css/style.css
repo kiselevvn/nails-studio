@@ -440,7 +440,7 @@ ul.social_icon li a:hover {
 
 .titlepage {
   text-align: center;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .titlepage h2 {
@@ -483,7 +483,7 @@ ul.social_icon li a:hover {
 
 .we_do {
   padding-top: 90px;
-  padding-bottom: 147px;
+  padding-bottom: 60px;
   background-color: #fff;
   position: relative;
 }
@@ -536,7 +536,7 @@ ul.social_icon li a:hover {
   background-color: #fff;
   padding-top: 90px;
   position: relative;
-  padding-bottom: 170px;
+  padding-bottom: 60px;
 }
 
 .slin2::before {
@@ -553,7 +553,7 @@ ul.social_icon li a:hover {
 
 .about .titlepage {
   text-align: left;
-  padding-bottom: 0;
+  padding-bottom: 30px;
 }
 
 .about .titlepage h2 {
@@ -589,7 +589,7 @@ ul.social_icon li a:hover {
 
 .pricing {
   background-color: #fff;
-  padding: 90px 0 170px 0;
+  padding: 90px 0 80px 0;
   position: relative;
 }
 
@@ -599,7 +599,7 @@ ul.social_icon li a:hover {
 }
 
 .pricing_box {
-
+  height: 100%;
   border: #727272 solid 1px;
   padding: 74px 56px 80px 56px;
 }
@@ -676,7 +676,7 @@ ul.social_icon li a:hover {
 
 .experts {
   background-color: #fff;
-  padding: 90px 0 147px 0;
+  padding: 90px 0 80px 0;
   position: relative;
 }
 
@@ -829,6 +829,7 @@ ul.social_icon li a:hover {
 .footer {
   background: #222222;
   padding-top: 60px;
+  padding-bottom: 60px;
   text-align: center;
 }
 
@@ -851,7 +852,8 @@ ul.social_icon li a:hover {
 
 ul.conta {
   text-align: left;
-  margin-bottom: 55px;
+  display: flex;
+  justify-content: center;
 }
 
 ul.conta li {
@@ -1003,4 +1005,23 @@ ul.link_menu li a:hover {
 
 .margin_0 {
   margin: 0 !important;
+}
+
+.price-position {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.price-position div {
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100;
+}
+
+.price-position__dots {
+  flex-grow: 1;
+  margin-left: 7px;
+  margin-right: 7px;
+  border-bottom: 3px dotted black;
 }

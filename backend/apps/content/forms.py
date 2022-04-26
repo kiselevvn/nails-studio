@@ -11,4 +11,6 @@ class MessageForm(ModelForm):
             "email",
             "phone",
             "text",
+            "category",
+            "course",
         ]
