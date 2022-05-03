@@ -6,6 +6,7 @@ $(function () {
 
   "use strict";
 
+
   $('a[href^="#"]').click(function () {
     let anchor = $(this).attr('href');
     $('html, body').animate({

@@ -12,6 +12,9 @@ class CategoryService(
     name = models.TextField(
         verbose_name=_("Категория услуги"),
     )
+    description = models.TextField(
+        verbose_name=_("Краткое описание"), blank=True, null=True
+    )
     is_published = models.BooleanField(
         verbose_name=_("Катеория услуг опубликована"), default=False
     )

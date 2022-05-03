@@ -27,11 +27,9 @@ get_setting 'SUBTITLE' default=''
             <div class="container-fluid">
               <div class="carousel-caption relative">
                   <div class="row justify-content-center align-items-center">
-                    <div class="col-md-4" style="background-image:url('{% static 'images/banner_ing.jpg' %}');background-size:cover;min-height:560px;">
-
-                        {% comment %} <img  class="bann_img" src="" alt="#"/> {% endcomment %}
+                    <div class="col-md-6" style="background-image:url('{% static 'images/banner_ing.jpg' %}');background-size:cover;min-height:560px;">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 offer-slide-part">
                         <h1>{% get_setting 'TITLE' default='' %}</h1>
                         <p>{% get_setting 'SUBTITLE' default='' %}</p>
                         <a class="get_btn" href="#form" role="button">Записаться</a>
@@ -46,11 +44,9 @@ get_setting 'SUBTITLE' default=''
           <div class="container-fluid">
             <div class="carousel-caption relative">
                 <div class="row justify-content-center align-items-center">
-                  <div class="col-md-4" style="background-image:url('{{ slide.picture.url }}');background-size:cover;min-height:560px;">
-
-                      {% comment %} <img  class="bann_img" src="" alt="#"/> {% endcomment %}
+                  <div class="col-md-6" style="background-image:url('{{ slide.picture.url }}');background-size:cover;min-height:560px;">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 offer-slide-part">
                       <h1>{{ slide.title }}</h1>
                       <p>{{ slide.text }}</p>
                       <a class="get_btn" href="#form" role="button">Записаться</a>
@@ -83,30 +79,24 @@ get_setting 'SUBTITLE' default=''
             </div>
         </div>
       </div>
-      <div class="row my-4 justify-content-center">
-        <div class="col-12 col-md-10" >
-          <h2 class="my-2 text-center"></h2>
-          <div
-            class="fotorama h-100"
-            data-width=""
-            data-height="100%"
-            data-maxHeight="600px"
-            data-allowfullscreen="true"
-            data-nav="thumbs"
-            data-fit="cover"
-            >
-            {% for photo in gallery_photo %}
-              <img  src="{{photo.picture.url}}" alt="{{photo.description}}">
-            {% endfor %}
-          </div>
+      <div class="row">
+        {% for photo in gallery_photo %}
+        <div class="col-lg-3 col-md-4 col-6 mb-4">
+          <a href="{{photo.picture.url}}"
+            data-fancybox="gallery"
+            class="hover-scale"
+          >
+            <img src="{{photo.picture.url}}" alt="{{photo.description}}"/>
+          </a>
         </div>
+        {% endfor %}
       </div>
   </div>
 </div>
 <!-- end what we do  -->
 <!-- about -->
 <div id="we-do" class="about">
-  <div class="container">
+  <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-md-4">
             <div class="titlepage">
@@ -116,7 +106,6 @@ get_setting 'SUBTITLE' default=''
       </div>
       <div class="row justify-content-center">
         <div class="col-12 col-md-10" >
-
           <div
             class="fotorama h-100"
             data-width=""
@@ -124,7 +113,7 @@ get_setting 'SUBTITLE' default=''
             data-maxHeight="600px"
             data-allowfullscreen="true"
             data-nav="thumbs"
-            data-fit="cover"
+            data-fit="contain"
             >
             {% for  certificate in certificates %}
               <img  src="{{certificate.picture.url}}" alt="{{certificate.description}}">
@@ -148,29 +137,41 @@ get_setting 'SUBTITLE' default=''
 
     <div class="row justify-content-around" style="margin-bottom:80px;">
       {% for category in category_service %}
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-md-5 my-4">
         <div class="we_box">
-          <h3 class="mb-3">{{category.name}}</h3>
-          {% for service in category.services.all %}
-          <div class="price-position mt-3 d-flex">
-            <div>{{service.name}}</div>
-            <div class="price-position__dots"></div>
-            <div><strong>{{service.price}} руб.</strong></div>
+          <h3 class="">{{category.name}}</h3>
+          {% if category.description %}<p>{{ category.description }}</p>{% endif %}
+          <div class="my-4">
+            {% for service in category.services.all %}
+            <div class="price-position d-flex">
+              <div>{{service.name}}</div>
+              <div class="price-position__dots"></div>
+              <div><strong>{{service.price}} руб.</strong></div>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
+          <a target="_blank" href="https://wa.me/{% get_setting 'WHATSAPP' default='79185818065' %}" class="we_box__link" >
+            Записаться в Whatsapp
+          </a>
         </div>
       </div>
       {% endfor %}
-      <div class="col-12 col-md-7">
+      <div class="col-12 col-md-6  my-4">
         <div class="we_box">
-          <h3 class="mb-3">Дополнительные Услуги</h3>
-          {% for service in additional_services %}
-          <div class="price-position mt-3 d-flex">
-            <div>{{service.name}}</div>
-            <div class="price-position__dots"></div>
-            <div><strong>{{service.price}} руб.</strong></div>
+          <h3 class="">Дополнительные Услуги</h3>
+          <p>Цены на услуги в конкретных случаях могут различаться</p>
+          <div class="my-4">
+            {% for service in additional_services %}
+            <div class="price-position d-flex">
+              <div>{{service.name}}</div>
+              <div class="price-position__dots"></div>
+              <div><strong>{{service.price}} руб.</strong></div>
+            </div>
+            {% endfor %}
           </div>
-          {% endfor %}
+          <a target="_blank" href="https://wa.me/{% get_setting 'WHATSAPP' default='79185818065' %}" class="we_box__link" >
+            Записаться в Whatsapp
+          </a>
         </div>
       </div>
     </div>
@@ -185,7 +186,7 @@ get_setting 'SUBTITLE' default=''
       </div>
       <div class="row justify-content-around">
         {% for course in courses %}
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 hover-scale">
             <div class="pricing_box">
               <div class="pricing_box_ti">
                   <h3>{{course.price}}<strong>/ руб.</strong></h3>
@@ -241,12 +242,13 @@ get_setting 'SUBTITLE' default=''
 </div>
 <!-- end experts -->
 <!--  contact -->
-<div id="form" class="contact">
-  <div class="container">
+<div id="form" class="contact" style="background-image: url('{% static 'images/banner_ing.jpg' %}');">
+  <div style="background-color: rgba(0,0,0,.6);">
+    <div class="container py-4" >
       <div class="row">
         <div class="col-md-12">
-            <div class="titlepage mb-4">
-              <h2>Как с нами связвться?</h2>
+            <div class="titlepage mb-4" >
+              <h2 style="color: white !important;">Как с нами связвться?</h2>
             </div>
         </div>
       </div>
@@ -275,9 +277,10 @@ get_setting 'SUBTITLE' default=''
             </form>
         </div>
         <div class="col-12 col-md-6">
-          <iframe width="100%" height="80%" frameborder="0" style="min-height: 400px;" title="map" marginheight="0" marginwidth="0" scrolling="no" src="{% get_setting 'MAP' default='' %}" ></iframe>
+          <iframe width="100%" height="80%" frameborder="0" style="min-height: 400px;" title="map" marginheight="0" marginwidth="0" scrolling="no" src="{% get_setting 'MAP' default='images/banner_ing.jpg' %}" ></iframe>
         </div>
       </div>
+    </div>
   </div>
 </div>
 <!-- end contact -->

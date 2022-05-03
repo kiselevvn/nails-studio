@@ -47,6 +47,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.80857;
   font-weight: normal;
+  background-color: #fffef2;
 }
 
 a {
@@ -254,18 +255,38 @@ button {
 /*--------------------------------------------------------------------- top banner area ---------------------------------------------------------------------*/
 
 .header {
-  width: 100%;
-  height: 86px;
-  padding: 24px 60px;
-  background: #fff;
+  background: rgba(101, 101, 101, 0.615);
+  color: white !important;
 }
 
-.logo a img {
-  z-index: 9999;
-  position: relative;
+.logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 45px;
 }
 
-.logo::before {
+
+@media (max-width: 768px) {
+  .logo a {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer-slide-part {
+    padding: 20px 0;
+    position: absolute;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .5);
+
+  }
+
+  .offer-slide-part .get_btn {
+    margin: 0 auto;
+  }
+}
+
+
+/* .logo::before {
   position: absolute;
   content: "";
   background-color: #2e2d2d;
@@ -273,7 +294,7 @@ button {
   height: 86px;
   left: -75px;
   top: -24px;
-}
+} */
 
 
 /*-- navigation--*/
@@ -283,7 +304,7 @@ button {
   padding: 0;
 }
 
-.navigation.navbar-dark .navbar-nav .nav-link {
+.nav-item .nav-link {
   padding: 8px 20px;
   color: #2e2d2d;
   font-size: 16px;
@@ -291,17 +312,17 @@ button {
   font-weight: 500;
 }
 
-.navigation.navbar-dark .navbar-nav .nav-link:focus,
-.navigation.navbar-dark .navbar-nav .nav-link:hover {
-  color: #fff;
+.nav-item .nav-link:focus,
+.nav-item .nav-link:hover {
+  color: #fff !important;
   background-color: #2e2d2d;
 }
 
-.navigation.navbar-dark .navbar-nav .active>.nav-link,
-.navigation.navbar-dark .navbar-nav .nav-link.active,
-.navigation.navbar-dark .navbar-nav .nav-link.show,
-.navigation.navbar-dark .navbar-nav .show>.nav-link {
-  color: #fff;
+.nav-item .active>.nav-link,
+.nav-item .nav-link.active,
+.nav-item .nav-link.show,
+.nav-item .show>.nav-link {
+  color: #fff !important;
   background-color: #2e2d2d;
 }
 
@@ -339,18 +360,18 @@ ul.social_icon li a:hover {
 
 /** banner section **/
 
-.banner_main::before {
+/* .banner_main::before {
   position: absolute;
   content: "";
   background-color: #2e2d2d;
   width: 370px;
   height: 764px;
   left: 0;
-}
+} */
 
 .banner1 {
   position: relative;
-  padding: 50px 0 100px 0;
+  padding: 0 0 50px 0;
 }
 
 .relative {
@@ -376,7 +397,7 @@ ul.social_icon li a:hover {
 }
 
 .get_btn {
-  background-color: #2e2d2d;
+  background-color: #fa8c17;
   color: #fff;
   text-align: center;
   max-width: 216px;
@@ -388,7 +409,9 @@ ul.social_icon li a:hover {
 }
 
 .get_btn:hover {
-  color: #fa8c17;
+  box-shadow: 0 0 14px #cf6b00;
+  transition: ease-in all 0.5s;
+  color: #fff;
 }
 
 .bann_img {
@@ -484,7 +507,7 @@ ul.social_icon li a:hover {
 .we_do {
   padding-top: 90px;
   padding-bottom: 60px;
-  background-color: #fff;
+  /* background-color: #fff; */
   position: relative;
 }
 
@@ -502,7 +525,30 @@ ul.social_icon li a:hover {
 
 .we_box {
   text-align: center;
-  margin-bottom: 30px;
+  padding: 40px 30px;
+  padding-bottom: 10px;
+  border: 1px solid rgb(218, 217, 217);
+  height: 100%;
+  background-color: #fff;
+  transition: all .2s ease-in-out;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.we_box__link {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.we_box__link:hover {
+  color: #fa8c17;
+}
+
+.we_box:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px gray;
 }
 
 .we_box i {
@@ -520,12 +566,15 @@ ul.social_icon li a:hover {
 .we_box h3 {
   font-size: 24px;
   font-weight: bold;
-  line-height: 25px;
-  padding-bottom: 5px;
   color: #2e2d2d;
-  padding-top: 30px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
+.we_box p {
+  font-size: 13px;
+  color: #2e2d2d;
+}
 
 /** end What We Do section **/
 
@@ -533,7 +582,7 @@ ul.social_icon li a:hover {
 /** end team section **/
 
 .about {
-  background-color: #fff;
+  /* background-color: #fff; */
   padding-top: 90px;
   position: relative;
   padding-bottom: 60px;
@@ -552,7 +601,7 @@ ul.social_icon li a:hover {
 }
 
 .about .titlepage {
-  text-align: left;
+  text-align: center;
   padding-bottom: 30px;
 }
 
@@ -588,9 +637,10 @@ ul.social_icon li a:hover {
 /** our pricing section **/
 
 .pricing {
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 90px 0 80px 0;
   position: relative;
+
 }
 
 .pricing .titlepage {
@@ -600,9 +650,12 @@ ul.social_icon li a:hover {
 
 .pricing_box {
   height: 100%;
-  border: #727272 solid 1px;
+  border: 1px solid rgb(218, 217, 217);
   padding: 74px 56px 80px 56px;
+  background-color: white;
 }
+
+
 
 .pricing_box div {
 
@@ -675,8 +728,8 @@ ul.social_icon li a:hover {
 /** Experts section **/
 
 .experts {
-  background-color: #fff;
-  padding: 20px 0 80px 0;
+  /* background-color: #fff; */
+  padding: 30px 0 30px 0;
   position: relative;
 }
 
@@ -687,7 +740,6 @@ ul.social_icon li a:hover {
 
 .experts .experts_box {
   text-align: left;
-  background-color: #fff;
   transition: ease-in all 0.5s;
 }
 
@@ -709,10 +761,10 @@ ul.social_icon li a:hover {
 }
 
 #exp:hover .experts_img figure img {
-  border-top: #2e2e2e solid 20px;
-  border-bottom: #2e2e2e solid 20px;
-  border-left: #2e2e2e solid 30px;
-  border-right: #2e2e2e solid 30px;
+  border-top: #fa8c17 solid 20px;
+  border-bottom: #fa8c17 solid 20px;
+  border-left: #fa8c17 solid 30px;
+  border-right: #fa8c17 solid 30px;
 }
 
 .experts .experts_box .meet {
@@ -751,21 +803,18 @@ ul.social_icon li a:hover {
 /** contact section **/
 
 .contact {
-  background: #fff;
-  margin-top: 30px;
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
   position: relative;
+  /* Create the parallax scrolling effect */
+  background: rgba(0, 0, 0, 0.6), url('static/images/banner_ing.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
-.contact::before {
-  position: absolute;
-  content: "";
-  right: 0;
-  background: url(../images/co_right.png);
-  background-repeat: no-repeat;
-  width: 156px;
-  height: 283px;
-  top: 14%;
-}
 
 .main_form .contactus {
   border: #fff solid 1px;
@@ -796,7 +845,7 @@ ul.social_icon li a:hover {
 .main_form .send_btn {
   font-size: 20px;
   transition: ease-in all 0.5s;
-  background-color: #2e2d2d;
+  background-color: #fa8c17;
   text-transform: uppercase;
   color: #fff;
   padding: 10px 0px;
@@ -810,7 +859,7 @@ ul.social_icon li a:hover {
 }
 
 .main_form .send_btn:hover {
-  background-color: #fa8c17;
+  box-shadow: 0 0 14px #cf6b00;
   transition: ease-in all 0.5s;
   color: #fff;
 }
@@ -958,7 +1007,7 @@ ul.link_menu li a:hover {
 .copyright {
   margin-top: 60px;
   padding-bottom: 20px;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-right: inherit;
   border-left: inherit;
 }
@@ -1024,4 +1073,59 @@ ul.link_menu li a:hover {
   margin-left: 7px;
   margin-right: 7px;
   border-bottom: 3px dotted black;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 99;
+  background-color: #25d366;
+  border-radius: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 25px -6px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 25px -6px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 25px -6px rgba(0, 0, 0, 1);
+  animation: effect 5s infinite ease-in;
+}
+
+@keyframes effect {
+
+  20%,
+  100% {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+
+  0%,
+  10% {
+    width: 55px;
+    height: 55px;
+    font-size: 35px;
+  }
+
+  5% {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+}
+
+.hover-scale {
+  transition: ease-in all 0.5s;
+
+}
+
+.hover-scale:hover {
+  transform: scale(1.1);
+
 }
