@@ -804,9 +804,7 @@ ul.social_icon li a:hover {
 .contact {
   /* padding-top: 30px;
   padding-bottom: 30px; */
-  position: relative;
-  /* Create the parallax scrolling effect */
-  background: rgba(0, 0, 0, 0.6), url('static/images/banner_ing.jpg');
+
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

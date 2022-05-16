@@ -70,7 +70,7 @@ get_setting 'SUBTITLE' default=''
 </section>
 <!-- end banner -->
 <div class="we_do">
-  <div class="container">
+  <div class="container" style="background-image: url({% static 'images/icons/icon1.png'%});background-position: right bottom;background-repeat: no-repeat;background-size: 130px">
       <div class="row" style="margin-bottom:80px;">
         <div class="col-md-12">
             <div class="titlepage">
@@ -128,15 +128,15 @@ get_setting 'SUBTITLE' default=''
 <!-- about -->
 <div id="we-do" class="about">
   <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-md-4">
+      <div class="row justify-content-center"  >
+        <div class="col-12 col-md-4">
             <div class="titlepage">
               <h2>Сертификаты</h2>
             </div>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-12 col-md-10" >
+        <div class="col-12 col-md-10"  style="background-image: url({% static 'images/icons/icon4.png'%});background-position: left bottom;background-repeat: no-repeat;background-size: 130px">
           <div
             class="fotorama h-100"
             data-width=""
@@ -157,7 +157,7 @@ get_setting 'SUBTITLE' default=''
 <!-- end about -->
 <!-- our pricing -->
 <div id="pricing"  class="pricing ">
-  <div class="container my-4">
+  <div class="container my-4" style="background-image: url({% static 'images/icons/icon1.png'%}), url({% static 'images/icons/icon3.png'%});background-position:right bottom, left bottom;background-repeat:no-repeat, no-repeat;background-size: 130px,130px;">
     <div class="row">
       <div class="col-md-12">
           <div class="titlepage">
@@ -166,7 +166,7 @@ get_setting 'SUBTITLE' default=''
       </div>
     </div>
 
-    <div class="row justify-content-around" style="margin-bottom:80px;">
+    <div class="row justify-content-around" style="margin-bottom:80px;" >
       {% for category in category_service %}
       <div class="col-12 col-md-5 my-4">
         <div class="we_box">
@@ -207,32 +207,36 @@ get_setting 'SUBTITLE' default=''
       </div>
     </div>
   </div>
-  <div class="container my-4">
-      <div class="row  my-4">
-        <div class="col-md-12">
-            <div class="titlepage">
-              <h2>Цены курсов</h2>
-            </div>
+  <div class="" style="background-image:url('{% static 'images/banner_two.jpg' %}');background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+    <div style="background-color: rgba(0,0,0,.6);padding-top:50px;padding-bottom:50px;">
+      <div class="container" style="">
+        <div class="row  my-4">
+          <div class="col-md-12">
+              <div class="titlepage">
+                <h2>Цены курсов</h2>
+              </div>
+          </div>
+        </div>
+        <div class="row justify-content-around">
+          {% for course in courses %}
+          <div class="col-md-4 mb-4 hover-scale">
+              <div class="pricing_box">
+                <div class="pricing_box_ti">
+                    <h3>{{course.price}}<strong>/ руб.</strong></h3>
+                </div>
+                <div class="our_pricing">
+                    <span>{{course.name}}</span>
+                    <p>{{course.description}}</p>
+                </div>
+              </div>
+              <a class="read_more mar_top" href="{% url 'course-buy' course.pk %}">Записаться</a>
+          </div>
+          {% endfor %}
         </div>
       </div>
-      <div class="row justify-content-around">
-        {% for course in courses %}
-        <div class="col-md-4 mb-4 hover-scale">
-            <div class="pricing_box">
-              <div class="pricing_box_ti">
-                  <h3>{{course.price}}<strong>/ руб.</strong></h3>
-              </div>
-              <div class="our_pricing">
-                  <span>{{course.name}}</span>
-                  <p>{{course.description}}</p>
-              </div>
-            </div>
-            <a class="read_more mar_top" href="{% url 'course-buy' course.pk %}">Записаться</a>
-        </div>
-        {% endfor %}
-
-      </div>
+    </div>
   </div>
+
 </div>
 <!-- end our pricing -->
 <!-- experts -->
