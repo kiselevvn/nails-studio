@@ -42,12 +42,13 @@ html {
 }
 
 body {
-  color: #666666;
+  padding-top: 100px;
+  color: #ffffff;
   font-size: 14px;
   font-family: 'Poppins', sans-serif;
   line-height: 1.80857;
   font-weight: normal;
-  background-color: #fffef2;
+  background-color: #141414;
 }
 
 a {
@@ -60,6 +61,8 @@ a {
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
+
+
 
 h1,
 h2,
@@ -115,9 +118,9 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-  color: #212121;
+  color: ##afafaf;
   text-decoration: none !important;
-  opacity: 1
+  opacity: 1;
 }
 
 button:focus {
@@ -135,7 +138,7 @@ ol {
 p {
   margin: 0px;
   font-weight: 400;
-  color: #2e2d2d;
+  color: #afafaf;
   font-size: 17px;
   line-height: 24px;
 }
@@ -261,7 +264,7 @@ button {
 
 .logo {
   font-family: 'Dancing Script', cursive;
-  font-size: 45px;
+  font-size: 42px;
 }
 
 
@@ -276,7 +279,7 @@ button {
     padding: 20px 0;
     position: absolute;
     text-align: center;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(22, 22, 22, .7);
 
   }
 
@@ -299,14 +302,14 @@ button {
 
 /*-- navigation--*/
 
-.navigation.navbar {
-  float: right;
-  padding: 0;
+.navbar {
+  background-color: rgba(0, 0, 0, 0.774);
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .nav-item .nav-link {
   padding: 8px 20px;
-  color: #2e2d2d;
   font-size: 16px;
   line-height: 20px;
   font-weight: 500;
@@ -314,8 +317,7 @@ button {
 
 .nav-item .nav-link:focus,
 .nav-item .nav-link:hover {
-  color: #fff !important;
-  background-color: #2e2d2d;
+  color: #f0c000 !important;
 }
 
 .nav-item .active>.nav-link,
@@ -323,7 +325,6 @@ button {
 .nav-item .nav-link.show,
 .nav-item .show>.nav-link {
   color: #fff !important;
-  background-color: #2e2d2d;
 }
 
 .navbar-expand-md .navbar-nav {
@@ -360,18 +361,16 @@ ul.social_icon li a:hover {
 
 /** banner section **/
 
-/* .banner_main::before {
-  position: absolute;
-  content: "";
-  background-color: #2e2d2d;
-  width: 370px;
-  height: 764px;
-  left: 0;
-} */
+.banner_main {
+  min-height: 81vh;
+  display: flex;
+  align-items: center;
+}
 
 .banner1 {
+
+  width: 100%;
   position: relative;
-  padding: 0 0 50px 0;
 }
 
 .relative {
@@ -388,16 +387,16 @@ ul.social_icon li a:hover {
   font-size: 74px;
   line-height: 80px;
   font-weight: 500;
-  color: #2e2d2d;
+  color: #ffffff;
 }
 
 .relative p {
-  color: #2e2d2d;
+  color: #ffffff;
   padding-bottom: 70px;
 }
 
 .get_btn {
-  background-color: #fa8c17;
+  background-color: #f0c000;
   color: #fff;
   text-align: center;
   max-width: 216px;
@@ -409,7 +408,7 @@ ul.social_icon li a:hover {
 }
 
 .get_btn:hover {
-  box-shadow: 0 0 14px #cf6b00;
+  box-shadow: 0 0 14px #f0c000;
   transition: ease-in all 0.5s;
   color: #fff;
 }
@@ -468,7 +467,7 @@ ul.social_icon li a:hover {
 
 .titlepage h2 {
   font-size: 45px;
-  color: #2e2d2d;
+  color: #ffffff;
   line-height: 45px;
   font-weight: bold;
   padding: 0;
@@ -483,7 +482,7 @@ ul.social_icon li a:hover {
 
 .read_more {
   font-size: 17px;
-  background-color: #2e2d2d;
+  background-color: #464646;
   color: #fff;
   padding: 12px 0px;
   width: 100%;
@@ -496,7 +495,7 @@ ul.social_icon li a:hover {
 }
 
 .read_more:hover {
-  background: #fa8c17;
+  background: #f0c000;
   color: #fff;
   transition: ease-in all 0.5s;
 }
@@ -543,7 +542,7 @@ ul.social_icon li a:hover {
 }
 
 .we_box__link:hover {
-  color: #fa8c17;
+  color: #f0c000;
 }
 
 .we_box:hover {
@@ -675,7 +674,7 @@ ul.social_icon li a:hover {
 .pricing_box_ti h3::before {
   position: absolute;
   content: "";
-  background-color: #ddd;
+  background-color: #ffdf28;
   width: 84px;
   height: 4px;
   border-radius: 5px;
@@ -754,17 +753,17 @@ ul.social_icon li a:hover {
 .experts .experts_box .experts_img figure img {
   width: 100%;
   transition: all .5s;
-  border-top: #e2e2e2 solid 20px;
-  border-bottom: #e2e2e2 solid 20px;
-  border-left: #e2e2e2 solid 30px;
-  border-right: #e2e2e2 solid 30px;
+  border-top: #383838 solid 20px;
+  border-bottom: #383838 solid 20px;
+  border-left: #383838 solid 30px;
+  border-right: #383838 solid 30px;
 }
 
 #exp:hover .experts_img figure img {
-  border-top: #fa8c17 solid 20px;
-  border-bottom: #fa8c17 solid 20px;
-  border-left: #fa8c17 solid 30px;
-  border-right: #fa8c17 solid 30px;
+  border-top: #f0c000 solid 20px;
+  border-bottom: #f0c000 solid 20px;
+  border-left: #f0c000 solid 30px;
+  border-right: #f0c000 solid 30px;
 }
 
 .experts .experts_box .meet {
@@ -773,7 +772,7 @@ ul.social_icon li a:hover {
 }
 
 .experts .experts_box .meet h3 {
-  color: #343434;
+  color: #ffffff;
   font-size: 25px;
   line-height: 20px;
   padding-bottom: 12px;
@@ -845,7 +844,7 @@ ul.social_icon li a:hover {
 .main_form .send_btn {
   font-size: 20px;
   transition: ease-in all 0.5s;
-  background-color: #fa8c17;
+  background-color: #f0c000;
   text-transform: uppercase;
   color: #fff;
   padding: 10px 0px;
@@ -859,7 +858,7 @@ ul.social_icon li a:hover {
 }
 
 .main_form .send_btn:hover {
-  box-shadow: 0 0 14px #cf6b00;
+  box-shadow: 0 0 14px #f0c000;
   transition: ease-in all 0.5s;
   color: #fff;
 }
@@ -934,7 +933,7 @@ ul.link_menu li {
 }
 
 ul.link_menu li.active a {
-  color: #fa8c17;
+  color: #f0c000;
 }
 
 ul.link_menu li a {
@@ -946,7 +945,7 @@ ul.link_menu li a {
 }
 
 ul.link_menu li a:hover {
-  color: #fa8c17;
+  color: #f0c000;
 }
 
 .bottom_form {
@@ -983,7 +982,7 @@ ul.link_menu li a:hover {
 .right_btn {
   font-size: 17px;
   transition: ease-in all 0.5s;
-  background-color: #fa8c17;
+  background-color: #f0c000;
   color: #fff;
   padding: 8px 16px;
   font-weight: 500;
@@ -996,7 +995,7 @@ ul.link_menu li a:hover {
 .right_btn:hover {
   background-color: #ddd;
   transition: ease-in all 0.5s;
-  color: #fa8c17;
+  color: #f0c000;
 }
 
 .bottom_form p {
@@ -1026,7 +1025,7 @@ ul.link_menu li a:hover {
 }
 
 .copyright a:hover {
-  color: #fa8c17;
+  color: #f0c000;
 }
 
 
@@ -1128,4 +1127,25 @@ ul.link_menu li a:hover {
 .hover-scale:hover {
   transform: scale(1.1);
 
+}
+
+.about-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about__h {
+  color: white;
+}
+
+.about__p strong {
+  color: rgb(217, 217, 217);
+}
+
+.about__p {
+  font-size: 22px;
+  margin-bottom: 12px;
 }

@@ -57,18 +57,49 @@ get_setting 'SUBTITLE' default=''
         </div>
         {% endfor %}
 
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        {% comment %} <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
         <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
         <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
         <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
         <span class="sr-only">Next</span>
-        </a>
+        </a> {% endcomment %}
       </div>
   </div>
 </section>
 <!-- end banner -->
+<div class="we_do">
+  <div class="container">
+      <div class="row" style="margin-bottom:80px;">
+        <div class="col-md-12">
+            <div class="titlepage">
+              <h2>О нас</h2>
+            </div>
+        </div>
+      </div>
+      <div class="row justify-content-center" style="margin-bottom:80px;">
+        <div class="col-md-7 col-sm-12 pa-4">
+          <div class="about-box text-right">
+            <h2 class="about__h"> </h2>
+            <p class="about__p">
+              Студия была открыта в августе 2018 года. Мы проводим обучающие курсы а также принимаем клиентов <strong>каждый день с 9.00 до 21.30</strong>. У нас работают мастера с разного уровня квалификации, и разной ценовой категории, но тем не менее все выполняют свою работу качественно.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12"><img src="{% static 'images/studio/5.jpg' %}" alt=""></div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-4 col-sm-12 pa-4"><img src="{% static 'images/studio/3.jpg' %}" alt=""></div>
+        <div class="col-md-7 col-sm-12">
+          <div class="about-box">
+            <h2 class="about__h"></h2>
+            <p class="about__p">Наша студия всегда ставила акцент именно на качественно и долговременность носки покрытия. У нас индивидуальный подход ко всем клиентам, способ маникюра и покрытие подбирается индивидуально с учетом пожеланий и особенностей ноготков и ручек.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 <!-- what we do  -->
 <div id="about" class="we_do">
   <div class="container-fluid">
@@ -144,9 +175,9 @@ get_setting 'SUBTITLE' default=''
           <div class="my-4">
             {% for service in category.services.all %}
             <div class="price-position d-flex">
-              <div>{{service.name}}</div>
+              <p>{{service.name}}</p>
               <div class="price-position__dots"></div>
-              <div><strong>{{service.price}} руб.</strong></div>
+              <p><strong>{{service.price}} руб.</strong></p>
             </div>
             {% endfor %}
           </div>
@@ -163,9 +194,9 @@ get_setting 'SUBTITLE' default=''
           <div class="my-4">
             {% for service in additional_services %}
             <div class="price-position d-flex">
-              <div>{{service.name}}</div>
+              <p>{{service.name}}</p>
               <div class="price-position__dots"></div>
-              <div><strong>{{service.price}} руб.</strong></div>
+              <p><strong>{{service.price}} руб.</strong></p>
             </div>
             {% endfor %}
           </div>
@@ -248,7 +279,7 @@ get_setting 'SUBTITLE' default=''
       <div class="row">
         <div class="col-md-12">
             <div class="titlepage mb-4" >
-              <h2 style="color: white !important;">Как с нами связвться?</h2>
+              <h2 style="color: white !important;">Как с нами связаться?</h2>
             </div>
         </div>
       </div>

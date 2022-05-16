@@ -63,7 +63,7 @@ $(function () {
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
   // optional
   $('#blogCarousel').carousel({
-    interval: 5000
+    interval: 10000
   });
 
 
