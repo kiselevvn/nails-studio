@@ -213,6 +213,14 @@ python-versions = "*"
 six = ">=1.9.0,<2.0.0"
 
 [[package]]
+name = "django-model2puml"
+version = "0.2.0"
+description = "A Django app to generate PlantUML diagram of project models."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "django-picklefield"
 version = "3.0.1"
 description = "Pickled object field for Django"
@@ -752,7 +760,7 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9, <3.10"
-content-hash = "31e32f0db28d19daa1e428ef7f378473487d03b7eafe6e1d8fe85a0ca0bd4220"
+content-hash = "de48228445960f1499bb05ca8640cc264c354372187542a480df227a775f25a2"
 
 [metadata.files]
 appdirs = [
@@ -825,6 +833,9 @@ django-environ = [
 django-extra-settings = [
     {file = "django-extra-settings-0.1.4.tar.gz", hash = "sha256:11b0a1eac1a9d5e68b033b72d5de65570c9e43dd3c05af331f27e4b2c8c59192"},
     {file = "django_extra_settings-0.1.4-py3-none-any.whl", hash = "sha256:a02e8886868cce8155ac18dfd0cf3d3c1c6c4600e6dcaf101afaa983dbde34ab"},
+]
+django-model2puml = [
+    {file = "django-model2puml-0.2.0.tar.gz", hash = "sha256:051363e2cd3fe3df8094d737af8d3f1166d6582d692b79d8f1460de01dad6f3f"},
 ]
 django-picklefield = [
     {file = "django-picklefield-3.0.1.tar.gz", hash = "sha256:15ccba592ca953b9edf9532e64640329cd47b136b7f8f10f2939caa5f9ce4287"},

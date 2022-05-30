@@ -6,6 +6,7 @@ $(function () {
 
   "use strict";
 
+  $('#id_phone').mask("+7(999) 999-9999");
 
   $('a[href^="#"]').click(function () {
     let anchor = $(this).attr('href');

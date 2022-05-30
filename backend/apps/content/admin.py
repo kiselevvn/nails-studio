@@ -146,7 +146,7 @@ class СertificateAdmin(admin.ModelAdmin):
 class GalleryAdmin(admin.ModelAdmin):
     """
     Админ панель
-    Фото галлереи
+    Фото Галереи
     """
 
     list_display = (

@@ -9,6 +9,7 @@ DEFAULT_APPS = [
     "widget_tweaks",
     "extra_settings",
     "rest_framework",
+    "puml_generator",
 ]
 
 PROJECT_APPS = [

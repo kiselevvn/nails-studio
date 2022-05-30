@@ -4,7 +4,7 @@ from django.utils.translation import gettext as _
 
 class Gallery(models.Model):
     """
-    Галлерея
+    Галерея
     """
 
     picture = models.ImageField(verbose_name=_("Изображение"))
@@ -24,9 +24,9 @@ class Gallery(models.Model):
     order = models.IntegerField(_("Порядок"), default=0)
 
     class Meta:
-        verbose_name = _("Галлерея")
-        verbose_name_plural = _("Фото галлереи")
+        verbose_name = _("Галерея")
+        verbose_name_plural = _("Фото Галереи")
         ordering = ["order"]
 
     def __str__(self):
-        return f"Фото галлереи"
+        return f"Фото Галереи"

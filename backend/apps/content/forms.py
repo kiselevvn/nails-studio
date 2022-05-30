@@ -14,6 +14,21 @@ class MessageForm(ModelForm):
             "email",
             "phone",
             "text",
+            "course",
+        ]
+
+
+class CourseBuyForm(ModelForm):
+
+    privacy = BooleanField(required=True)
+
+    class Meta:
+        model = Comment
+        fields = [
+            "name",
+            "email",
+            "phone",
+            "text",
             "category",
             "course",
         ]

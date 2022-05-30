@@ -9,21 +9,22 @@ from apps.content.models import (
     Worker,
     Сertificate,
 )
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from django.views.generic import View
 
 
-class LandingView(TemplateView):
+class LandingView(View):
     """
     Лэндиннг сайта
     """
 
     template_name = "landing.html"
 
-    def get_context_data(self, **kwargs):
+    def get_data_object(self, **kwargs):
         """
         Контекст данных лэндинга
         """
-        data = super().get_context_data(**kwargs)
+        data = {}
         data["form"] = MessageForm()
 
         data["category_service"] = CategoryService.objects.filter(
@@ -38,3 +39,26 @@ class LandingView(TemplateView):
         data["certificates"] = Сertificate.objects.filter(is_published=True)
         data["gallery_photo"] = Gallery.objects.filter(is_published=True)
         return data
+
+
+    def get(self, request):
+        """
+        Обработка GET запроса
+        """
+        data = self.get_data_object()
+        form = MessageForm()
+        return render(request, template_name=self.template_name, context={**data, "form":form})
+
+    def post(self, request):
+        """
+        Обработка POST запроса
+        """
+        data = self.get_data_object()
+        form = MessageForm(request.POST, request.FILES)
+        print(form)
+        if form.is_valid():
+            form_instance = form.save()
+            print("1")
+            return render(request, template_name=self.template_name, context={**data, "form":form, "object":form_instance})
+        print(form.errors)
+        return render(request, template_name=self.template_name, context={**data, "form":form})

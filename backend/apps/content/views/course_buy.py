@@ -1,6 +1,6 @@
 from django.views.generic import DetailView
 
-from ..forms import MessageForm
+from ..forms import CourseBuyForm
 from ..models import Course
 
 
@@ -14,5 +14,5 @@ class CourseBuyFormView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form"] = MessageForm()
+        context["form"] = CourseBuyForm()
         return context

@@ -20,8 +20,8 @@ class Migration(migrations.Migration):
                 ('order', models.IntegerField(default=0, verbose_name='Порядок')),
             ],
             options={
-                'verbose_name': 'Галлерея',
-                'verbose_name_plural': 'Фото галлереи',
+                'verbose_name': 'Галерея',
+                'verbose_name_plural': 'Фото Галереи',
                 'ordering': ['order'],
             },
         ),
