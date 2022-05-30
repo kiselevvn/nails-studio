@@ -55,10 +55,7 @@ class LandingView(View):
         """
         data = self.get_data_object()
         form = MessageForm(request.POST, request.FILES)
-        print(form)
         if form.is_valid():
             form_instance = form.save()
-            print("1")
-            return render(request, template_name=self.template_name, context={**data, "form":form, "object":form_instance})
-        print(form.errors)
+            return render(request, template_name="thanks.html", context={})
         return render(request, template_name=self.template_name, context={**data, "form":form})
