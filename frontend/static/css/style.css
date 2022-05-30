@@ -1150,3 +1150,12 @@ ul.link_menu li a:hover {
 }
 
 .banner_main {}
+
+.privacy_block {
+  font-size: 19px;
+  text-align: center;
+}
+
+.privacy_block a {
+  color: #f0c000;
+}

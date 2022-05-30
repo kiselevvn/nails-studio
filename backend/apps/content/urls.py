@@ -8,6 +8,4 @@ urlpatterns = [
     path(
         "course-buy/<int:pk>/", CourseBuyFormView.as_view(), name="course-buy"
     ),
-    # path("news/", NewsListView.as_view(), name="news-list"),
-    # path("news/<int:pk>/", NewsDetailView.as_view(), name="news-detail"),
 ]

@@ -2,67 +2,17 @@ from django.contrib import admin
 
 from .models import (
     AdditionalService,
-    CategoryNews,
     CategoryService,
     Comment,
     Course,
     Gallery,
-    News,
     OfferSlide,
-    QuestionAnswer,
     Service,
     Worker,
     Сertificate,
 )
 
-# @admin.register(News)
-# class NewsAdmin(admin.ModelAdmin):
-#     """
-#     Админ панель
-#     Новость в админке
-#     """
 
-#     list_display = (
-#         "title",
-#         "category_news",
-#         "date",
-#         "is_published",
-#         "is_published_landing",
-#     )
-#     list_filter = (
-#         "is_published",
-#         "is_published_landing",
-#     )
-
-
-# @admin.register(CategoryNews)
-# class CategoryNewsAdmin(admin.ModelAdmin):
-#     """
-#     Админ панель
-#     Новость в админке
-#     """
-
-#     list_display = (
-#         "name",
-#         "date_created",
-#         "is_published",
-#     )
-#     list_filter = ("is_published",)
-
-
-# @admin.register(QuestionAnswer)
-# class QuestionAnswerAdmin(admin.ModelAdmin):
-#     """
-#     Админ панель
-#     Вопрос ответ в админке
-#     """
-
-#     list_display = (
-#         "question",
-#         "date_updated",
-#         "date_created",
-#     )
-#     list_filter = ("date_created",)
 
 
 @admin.register(Comment)

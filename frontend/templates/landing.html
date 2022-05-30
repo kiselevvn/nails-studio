@@ -13,7 +13,7 @@ get_setting 'SUBTITLE' default=''
 
 
 <!-- banner -->
-<section class="banner_main">
+<section class="banner_main ">
   <div id="myCarousel" class="carousel slide banner1" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -67,8 +67,14 @@ get_setting 'SUBTITLE' default=''
         </a> {% endcomment %}
       </div>
   </div>
+
 </section>
 <!-- end banner -->
+<div class="privacy_block ">
+  <div class="privacy_block_card">
+    <a href="{% url 'privacy' %}">Политика в отношении обработки персональных данных.</a>
+  </div>
+</div>
 <div class="we_do">
   <div class="container">
       <div class="row" style="margin-bottom:80px;">
@@ -207,7 +213,7 @@ get_setting 'SUBTITLE' default=''
       </div>
     </div>
   </div>
-  <div class="" style="background-image:url('{% static 'images/banner_two.jpg' %}');background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
+  <div id="course" class="" style="background-image:url('{% static 'images/banner_two.jpg' %}');background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
     <div style="background-color: rgba(0,0,0,.6);padding-top:50px;padding-bottom:50px;">
       <div class="container" style="">
         <div class="row  my-4">
@@ -279,7 +285,7 @@ get_setting 'SUBTITLE' default=''
 <!--  contact -->
 <div id="form" class="contact" style="background-image: url('{% static 'images/banner_ing.jpg' %}');">
   <div style="background-color: rgba(0,0,0,.6);">
-    <div class="container py-4" >
+    <div class="container py-4"  style="background-color: rgba(0,0,0,.6);">
       <div class="row">
         <div class="col-md-12">
             <div class="titlepage mb-4" >
@@ -304,6 +310,12 @@ get_setting 'SUBTITLE' default=''
                   </div>
                   <div class="col-md-12">
                     {% render_field form.text class+="textarea" placeholder=form.text.label %}
+                  </div>
+                  <div class="col-md-12">
+                    <div class="privacy_block">
+                      {% render_field form.privacy  %} Настоящим подтверждаю, что я ознаколмлен и согласен с <a href="{% url 'privacy' %}">политикой обработки персональных данных</a>.
+                    </div>
+
                   </div>
                   <div class="col-md-12">
                     <button type="submit" class="send_btn">Отправить</button>
