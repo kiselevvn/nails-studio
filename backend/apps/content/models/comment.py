@@ -28,11 +28,11 @@ class Comment(
         max_length=255,
     )
     phone = models.CharField(
-        verbose_name=_("Номер телефона"), max_length=25, blank=True, null=True
+        verbose_name=_("Номер телефона"), max_length=25
     )
     text = models.TextField(verbose_name=_("Сообщение"), blank=True, null=True)
     email = models.EmailField(
-        _("Электронная почта"), max_length=254, blank=True, null=True
+        _("Электронная почта"), max_length=254
     )
     # is_published_landing = models.BooleanField(
     #     verbose_name=_("Отзыв опубликован"), default=False
