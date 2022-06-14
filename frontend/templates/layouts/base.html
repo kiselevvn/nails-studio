@@ -30,19 +30,6 @@
   <title>{% block title %}Салон красоты{% endblock %}</title>
   <!-- style css -->
   <link rel="stylesheet" href="{% static 'css/style.css'%}">
-</head>
-<body class="main-layout" style="">
-
-  {% include 'components/whatsapp-button.html' %}
-
-  {% include 'components/header.html' %}
-
-  {% block body %}
-    Use body django block
-  {% endblock %}
-
-  {% include 'components/footer.html' %}
-
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -57,6 +44,20 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/88930236" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
+</head>
+<body class="main-layout" style="">
+
+  {% include 'components/whatsapp-button.html' %}
+
+  {% include 'components/header.html' %}
+
+  {% block body %}
+    Use body django block
+  {% endblock %}
+
+  {% include 'components/footer.html' %}
+
+
   <style>
     .fotorama__thumb-border {
       border-color: #fa8c17!important;
